@@ -1,0 +1,27 @@
+---
+- name: Create folder and add layout.jade and homepage.jade
+  hosts: dev
+  # add remote_vars key and its value here
+  vars:
+    name: shubham tyagi
+  tasks:
+    - name: Ping the host
+      ping:
+    - name: create message
+      debug:
+        msg: Connection successful
+    - name: create folder named with variable
+      file:
+        path: "~/Documents/untitled\ folder/{{folder_name}}"
+        state: directory
+      notify:
+        - create layout.jade file inside the folder
+  handlers:
+    - name: create layout.jade file inside the folder
+      template:
+        src: "./layout.j2"
+        dest: "~/Documents/untitled\ folder/{{folder_name}}/layout.jade"
+    - name: create layout.jade file inside the folder
+      template:
+        src: "./layout.j2"
+        dest: "~/Documents/untitled\ folder/{{folder_name}}/layout.jade"
