@@ -6,3 +6,6 @@
     ansible-playbook playbook1.yaml --extra-vars '{"folder_name":"theme_example"}'
     ```
   1. After creating folder it copies layout.j2 jinja template into layout.jade.
+
+# playbook2.yaml
+  1. It further extends the layout.jade and creates homepage.jade using layout.jade
